@@ -3,14 +3,14 @@
 
 
 ## usage
-1. Copy dist to your project.
-2. Build `deepth` with gulp, you can use pakcage.json
+1. Copy `dist` to your project.
+2. Build `deepth` with gulp, you can use `pakcage.json`
    ```json
     "buildConfig": {
       "deepth": 10
     }
    ```
-3. Use template
+3. Use template in your project
    ```html
     <import src="../../components/views/parser/html.wxml" />
     <template is="html" data="{{ item: nodes }}"></template>
