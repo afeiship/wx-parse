@@ -1,0 +1,12 @@
+{
+  "name": "wx-parse",
+  "version": "1.0.0",
+  "description": "Parse html to wxml",
+  "homepage": "https://github.com/afeiship/wx-parse",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}

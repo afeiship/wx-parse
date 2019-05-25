@@ -1,0 +1,18 @@
+/**parser Start**/
+.html-tag {
+  &-br {
+  }
+  &-img {
+  }
+  &-p {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  &-strong {
+    font-weight: bold;
+    display: inline-block;
+  }
+  &-text {
+  }
+}
+/**parser  End**/

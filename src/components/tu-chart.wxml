@@ -1,0 +1,3 @@
+<template name="tu-chart">
+  <tu-chart dataJson="{{ attrs.dataJson }}" />
+</template>
