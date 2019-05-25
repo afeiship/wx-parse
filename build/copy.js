@@ -14,13 +14,7 @@
     'copy',
     gulp.parallel(function() {
       return gulp
-        .src(
-          [
-            'src/components/**',
-            'src/htmls/**',
-          ],
-          DEFAULT_OPTIONS
-        )
+        .src(['src/components/**', 'src/htmls/**'], DEFAULT_OPTIONS)
         .pipe(gulp.dest('dist'));
     })
   );
