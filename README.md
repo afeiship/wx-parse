@@ -7,7 +7,8 @@
 2. Build `deepth` with gulp, you can use `pakcage.json`
    ```json
     "buildConfig": {
-      "deepth": 10
+      "deepth": 8,
+      "prefix": "html-tag-"
     }
    ```
 3. Use template in your project
