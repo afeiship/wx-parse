@@ -9,6 +9,12 @@
   },
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
+  "buildConfig": {
+    "deepth": 8
+  },
   "devDependencies": {
     "del": "^4.1.1",
     "gulp": "^4.0.2",

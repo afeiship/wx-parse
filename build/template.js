@@ -2,6 +2,8 @@
   'use strict';
 
   const gulp = require('gulp');
+  const fs = require('fs');
+  var pkg = JSON.parse(fs.readFileSync('./package.json'));
   const $ = require('gulp-load-plugins')({
     pattern: ['gulp-*', 'gulp.*', 'del']
   });
@@ -10,7 +12,7 @@
   gulp.task(
     'tmpl',
     gulp.parallel(function(callback) {
-      var deepth = 5;
+      var deepth = pkg.buildConfig.deepth || 2;
       for (var i = 0; i < deepth; i++) {
         (function(num) {
           gulp
