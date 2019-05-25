@@ -86,12 +86,6 @@
     }
    ```
 
-
-## resources
-- http://www.weikeba.cn/article-1618-1.html
-- http://blog.nicksite.me/index.php/archives/418.html
-
-
 ## KENG
 ~~~
 - 最大的坑：不支持递归 
@@ -99,3 +93,7 @@
 - 网上有说法是用 A->B / B->A 之类的方法代替递归，实际上是不行的，因为他们测试的层级只有2层而已
 - 另外：感谢 wxParse 这个库，实现思路是参考这个的
 ~~~
+
+## resources
+- http://www.weikeba.cn/article-1618-1.html
+- http://blog.nicksite.me/index.php/archives/418.html
