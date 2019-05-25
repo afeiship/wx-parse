@@ -2,6 +2,6 @@
   <image
     mode="widthFix"
     style="{{ attrs.style }}"
-    class="html-tag-img {{ attrs.class }}"
+    class="<%= prefix %>img {{ attrs.class }}"
     src="{{ attrs.src }}"/>
 </template>

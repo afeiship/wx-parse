@@ -13,7 +13,8 @@
     "build": "gulp"
   },
   "buildConfig": {
-    "deepth": 8
+    "deepth": 8,
+    "prefix": "html-tag-"
   },
   "devDependencies": {
     "del": "^4.1.1",

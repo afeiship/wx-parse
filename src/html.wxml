@@ -1,20 +1,20 @@
+<!-- Import tags: -->
 <import src="tags/br.wxml" />
 <import src="tags/img.wxml" />
 <import src="tags/text.wxml" />
 
-
+<!-- Import recursive createElements -->
 <import src="htmls/html1.wxml" />
 <import src="htmls/html-item.wxml" />
 
-
-
+<!-- recursive logic -->
 <template name="html">
   <block wx:if="{{ item.tagName &&  item.children.length == 0}}">
     <template is="html-item" data="{{ item }}"/>
   </block>
 
   <block wx:if="{{ item.tagName &&  item.children.length > 0}}">
-    <view class="html-tag-{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
+    <view class="<%= prefix %>{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
       <block wx:for="{{ item.children }}" wx:key="{{ index }}"   wx:for-item="subItem">
           <template is="html1" data="{{ item: subItem }}"/>
       </block>

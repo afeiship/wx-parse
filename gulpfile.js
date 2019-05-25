@@ -14,6 +14,7 @@
     'clean',
     'copy',
     'tmpl',
+    'prefix',
   ]))
 
 }());

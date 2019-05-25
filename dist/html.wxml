@@ -1,13 +1,13 @@
+<!-- Import tags: -->
 <import src="tags/br.wxml" />
 <import src="tags/img.wxml" />
 <import src="tags/text.wxml" />
 
-
+<!-- Import recursive createElements -->
 <import src="htmls/html1.wxml" />
 <import src="htmls/html-item.wxml" />
 
-
-
+<!-- recursive logic -->
 <template name="html">
   <block wx:if="{{ item.tagName &&  item.children.length == 0}}">
     <template is="html-item" data="{{ item }}"/>

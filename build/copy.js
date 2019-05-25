@@ -17,10 +17,7 @@
         .src(
           [
             'src/components/**',
-            'src/tags/**',
             'src/htmls/**',
-            'src/html.wxml',
-            'src/styles.scss'
           ],
           DEFAULT_OPTIONS
         )
