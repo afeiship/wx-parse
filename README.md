@@ -85,3 +85,14 @@
       ]
     }
    ```
+
+
+## resources
+- http://www.weikeba.cn/article-1618-1.html
+- http://blog.nicksite.me/index.php/archives/418.html
+
+
+## KENN
+- 最大的坑：不支持递归 
+- 不支持 createElement 之类的API
+- 网上有说法是用 A->B / B->A 之类的方法代替递归，实际上是不行的，因为他们测试的层级只有2层而已
