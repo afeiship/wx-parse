@@ -10,6 +10,10 @@
     require('./build/' + file);
   });
 
-  gulp.task('default',['build']);
+  gulp.task('default', gulp.series([
+    'clean',
+    'copy',
+    'tmpl',
+  ]))
 
 }());

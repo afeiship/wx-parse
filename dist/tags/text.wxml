@@ -1,0 +1,3 @@
+<template name="html-text" wx:if="value">
+  {{ value }}
+</template>
