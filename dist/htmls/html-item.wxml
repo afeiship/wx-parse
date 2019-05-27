@@ -1,7 +1,7 @@
 <template name="html-item">
   <block wx:if="{{item.type === 'text'}}">{{ item.content }}</block>
   <block wx:elif="{{item.tagName === 'img'}}">
-    <template is="html-img" data="{{...item}}" />
+    <weapp-image attrs="{{ item.attrs }}" />
   </block>
   <block wx:elif="{{item.tagName === 'br'}}">
     <template is="html-br" />
