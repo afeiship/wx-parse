@@ -25,5 +25,5 @@
       </view>
     </block>
   </block>
-  <block wx:if="{{ item.type == 'text' }}">{{ item.content }}</block>
+  <block wx:if="{{ item.type == 'text' &&  item.content }}">{{ item.content }}</block>
 </template>
