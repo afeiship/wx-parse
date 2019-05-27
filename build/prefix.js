@@ -19,8 +19,7 @@
           'src/style.scss',
           'src/tags/**',
         ], DEFAULT_OPTIONS)
-        .pipe($.data(() => pkg.buildConfig))
-        .pipe($.template())
+        .pipe($.ejs(pkg.buildConfig))
         .pipe(gulp.dest('dist'));
     })
   );
