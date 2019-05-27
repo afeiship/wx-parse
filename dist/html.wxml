@@ -1,6 +1,5 @@
 <!-- Import tags: -->
 <import src="tags/br.wxml" />
-<import src="tags/img.wxml" />
 <import src="tags/text.wxml" />
 
 <!-- Import recursive createElements -->

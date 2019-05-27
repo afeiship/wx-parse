@@ -1,7 +1,0 @@
-<template name="html-img">
-  <image
-    mode="widthFix"
-    style="{{ attrs.style }}"
-    class="<%= prefix %>img {{ attrs.class }}"
-    src="{{ attrs.src }}"/>
-</template>
