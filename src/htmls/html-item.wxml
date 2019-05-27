@@ -6,6 +6,9 @@
   <block wx:elif="{{item.tagName === 'br'}}">
     <template is="html-br" />
   </block>
+  <block wx:elif="{{item.tagName === 'tu-audio'}}">
+    <weapp-audio dataJson="{{ item.attrs.dataJson }}" />
+  </block>
   <block wx:elif="{{item.tagName === 'tu-chart'}}">
     <weapp-chart dataJson="{{ item.attrs.dataJson }}" />
   </block>
