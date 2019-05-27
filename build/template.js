@@ -17,8 +17,7 @@
         (function(num) {
           gulp
             .src('src/templates/html_deepth_tmpl.wxml')
-            .pipe($.data(() => ({ i: num + 1, j: num + 2 })))
-            .pipe($.template())
+            .pipe($.ejs({ i: num + 1, j: num + 2, deepth: deepth }))
             .pipe($.rename('html' + (num + 1) + '.wxml'))
             .pipe(gulp.dest('dist/htmls'));
         })(i);

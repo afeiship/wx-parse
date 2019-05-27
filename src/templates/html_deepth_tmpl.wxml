@@ -1,18 +1,31 @@
+<% if (j < (deepth+1)){ %>
 <import src="./html<%= j %>.wxml" />
+<% } %>
 <import src="./html-item.wxml" />
 <template name="html<%= i %>">
   <block wx:if="{{ item.tagName &&  item.children.length == 0}}">
-    <template is="html-item" data="{{ item }}"/>
+    <template is="html-item" data="{{ item }}" />
   </block>
-
   <block wx:if="{{ item.tagName &&  item.children.length > 0}}">
-    <view class="html-tag-{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
-      <block wx:for="{{ item.children }}" wx:key="{{ index }}" wx:for-item="subItem">
-          <template is="html<%= j %>" data="{{ item: subItem }}"/>
-      </block>
-    </view>
+    <block wx:if="{{ item.tagName == 'a' }}">
+      <tu-anchor attrs="{{ item.attrs }}">
+        <block wx:for="{{ item.children }}" wx:key="{{ index }}" wx:for-item="subItem">
+          <template is="html<%= j %>" data="{{ item: subItem }}" />
+        </block>
+      </tu-anchor>
+    </block>
+    <block wx:else>
+      <view class="html-tag-{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
+        <block wx:for="{{ item.children }}" wx:key="{{ index }}" wx:for-item="subItem">
+          <% if (j < (deepth+1)){ -%>
+          <template is="html<%= j %>" data="{{ item: subItem }}" />
+          <% } else { -%>
+          <!-- NOT SUPPORT LEVEL: <%= deepth %> CURRENT -->
+          <% } -%>
+        </block>
+      </view>
+    </block>
   </block>
-
   <block wx:if="{{ item.type == 'text' }}">
     <tu-text>{{ item.content }}</tu-text>
   </block>
