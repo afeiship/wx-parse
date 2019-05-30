@@ -87,6 +87,74 @@
     }
    ```
 
+## renderTimeChunk
+```js
+import { $interaction, $api } from '#';
+import wxParse from 'wx-parse';
+import nxTimeChunk from 'next-time-chunk';
+
+nx.Component({
+  options: {
+    addGlobalClass: true
+  },
+  properties: {
+    model: {
+      type: Object,
+      value: {}
+    }
+  },
+  data: {
+    nodes: {
+      loops: []
+    }
+  },
+  lifetimes: {
+    attached() {
+      const article_id = parseInt(this.data.model.elem_id);
+      $api.article_content_detail({ article_id }).then((response) => {
+        const nodes = wxParse(response.content, { chunkOffset: 100 });
+        const { loops } = this.data.nodes;
+        $interaction.loading(true, { title: '加载中' });
+        nxTimeChunk(nodes, (index, node) => {
+          loops.push(index);
+          this.setData({
+            'nodes.loops': loops,
+            [`nodes.${index}`]: node
+          });
+          console.info('[ render chunk ]:', index);
+        })().then(() => {
+          this.triggerEvent('complete');
+        });
+      });
+    }
+  }
+});
+```
+
+```json
+{
+    "loops":[0,1,2,3,4],
+    "nodes":{
+        "0": node0,
+        "1": node1,
+        "2": node2,
+        "3": node3,
+        "4": node4,
+    }
+}
+```
+
+```html
+<import src="./dist/html.wxml" />
+<view class="root-container tu-wx-parse">
+  <block wx:for="{{ nodes.loops }}" wx:key="{{ index }}" wx:for-item="subItem">
+    <block wx:if="{{ nodes[index] }}">
+      <template is="html" data="{{ item: nodes[index] }}"></template>
+    </block>
+  </block>
+</view>
+```
+
 ## KENG
 ~~~
 - 最大的坑：不支持递归 
